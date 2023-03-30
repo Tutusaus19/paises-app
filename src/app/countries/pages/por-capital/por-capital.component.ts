@@ -1,3 +1,4 @@
+import { InvokeFunctionExpr } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { Country } from '../../interfaces/countries.interfaces';
 import { CountriesService } from '../../services/countries.service';
@@ -9,7 +10,7 @@ import { CountriesService } from '../../services/countries.service';
 export class PorCapitalComponent {
   termino: string = '';
   hayError: boolean = false;
-  countries: Country[] = []
+  countries: Country[] = [];
 
 
   constructor(private countriesService : CountriesService ){}

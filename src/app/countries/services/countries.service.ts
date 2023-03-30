@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Country } from '../interfaces/countries.interfaces';
+import { tap } from 'rxjs/operators';
 
 
 @Injectable({
@@ -23,6 +24,10 @@ export class CountriesService {
   getPaisPorAlpha(id:string): Observable<Country>{
     const url = `${this.apiUrl}/alpha/${id}`;
     return this.http.get<Country>(url)
+  }
+  buscarRegion(region:string): Observable<Country[]>{
+    const url = `${this.apiUrl}/region/${region}`;
+    return this.http.get<Country[]>(url);
   }
 
 }
